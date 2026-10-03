@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#09090b" />
+
+    <title>ESPify - Manage and flash ESP microcontrollers</title>
+    <meta
+      name="description"
+      content="ESPify connects, inspects, flashes and monitors ESP microcontrollers (ESP32, ESP32-S3 and more) from the browser with the WebSerial API and esptool-js."
+    />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="http://localhost:5173/" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="http://localhost:5173/" />
+    <meta
+      property="og:title"
+      content="ESPify - Manage and flash ESP microcontrollers"
+    />
+    <meta
+      property="og:description"
+      content="ESPify connects, inspects, flashes and monitors ESP microcontrollers from the browser with WebSerial and esptool-js."
+    />
+    <meta property="og:locale" content="en_US" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary" />
+    <meta
+      property="twitter:title"
+      content="ESPify - Manage and flash ESP microcontrollers"
+    />
+    <meta
+      property="twitter:description"
+      content="ESPify connects, inspects, flashes and monitors ESP microcontrollers from the browser with WebSerial and esptool-js."
+    />
+
+    <link rel="icon" type="image/svg+xml" href="/icon.ico" />
+
+    <link
+      rel="preload"
+      href="/fonts/geist-latin.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+
+    <script>
+      ;(function () {
+        try {
+          const theme = localStorage.getItem("theme") || "system"
+          const isDark =
+            theme === "dark" ||
+            (theme === "system" &&
+              window.matchMedia("(prefers-color-scheme: dark)").matches)
+          const root = document.documentElement
+          root.classList.remove("light", "dark")
+          root.classList.add(isDark ? "dark" : "light")
+          root.style.colorScheme = isDark ? "dark" : "light"
+        } catch (e) {}
+      })()
+    </script>
+  </head>
+  <body>
+    <a
+      href="#main-content"
+      class="sr-only focus:not-sr-only focus:absolute focus:z-50 focus:m-2 focus:rounded-md focus:bg-background focus:px-4 focus:py-2 focus:text-sm focus:font-medium focus:text-foreground focus:ring-2 focus:ring-primary"
+    >
+      Skip to main content
+    </a>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
